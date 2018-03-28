@@ -1,0 +1,17 @@
+18:07:25 **** Incremental Build of configuration Release for project lab5a ****
+make all 
+Building file: ../rs232.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"rs232.d" -MT"rs232.d" -c -o "rs232.o" "../rs232.c"
+In file included from ../rs232.c:8:0:
+../rs232.h:14:19: error: expected ‘]’ before ‘;’ token
+subdir.mk:21: polecenia dla obiektu 'rs232.o' nie powiodły się
+ #define MAXSIZE 32;
+                   ^
+../rs232.c:12:26: note: in expansion of macro ‘MAXSIZE’
+ volatile char bufforRead[MAXSIZE];
+                          ^
+make: *** [rs232.o] Błąd 1
+
+18:07:25 Build Finished (took 64ms)
+

@@ -1,27 +1,5 @@
-19:15:46 **** Incremental Build of configuration Release for project lab4 ****
+18:40:06 **** Incremental Build of configuration Release for project lab4 ****
 make all 
-Building file: ../main.c
-Invoking: AVR Compiler
-avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=11059200UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.c"
-Finished building: ../main.c
- 
-Building target: lab4.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,lab4.map -mmcu=atmega32 -o "lab4.elf"  ./main.o   
-Finished building target: lab4.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S lab4.elf  >"lab4.lss"
-Finished building: lab4.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab4.elf  "lab4.hex"
-Finished building: lab4.hex
- 
-Create eeprom image (ihex format)
-avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex lab4.elf  "lab4.eep"
-Finished building: lab4.eep
- 
 Invoking: Print Size
 avr-size --format=avr --mcu=atmega32 lab4.elf
 AVR Memory Usage
@@ -38,5 +16,5 @@ Data:         21 bytes (1.0% Full)
 Finished building: sizedummy
  
 
-19:15:46 Build Finished (took 166ms)
+18:40:06 Build Finished (took 61ms)
 

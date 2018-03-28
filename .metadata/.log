@@ -70,3 +70,9 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2018-03-28 17:20:01.773
 !MESSAGE Indexed 'lab5' (0 sources, 0 headers) in 0,003 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-03-28 18:02:19.350
+!MESSAGE Indexed 'lab5a' (2 sources, 13 headers) in 0,182 sec: 60 declarations; 581 references; 0 unresolved inclusions; 2 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-03-28 18:02:42.125
+!MESSAGE Indexed 'lab5' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)

@@ -5,6 +5,7 @@
  *      Author: psm8
  */
 
+
 #include "rs232.h"
 
 volatile uint8_t znak;
@@ -20,10 +21,10 @@ void USART_init(uint8_t ubrr)
 	UBRRL = (unsigned char)ubrr;
 
 	/* Format ramki: słowo=8bitów, 2 bity stopu */
-	UCSRC = (1<<URSEL)|(1<<USBS)|(3<<UCSZ0);
+	UCSRC = (1<<URSEL)|(1<<UCSZ1)|(3<<UCSZ0);
 
 	/* Włączenie odbiornika i nadajnika */
-	UCSRB = (1<<RXEN)|(1<<TXEN);
+	UCSRB |= (1<<RXEN)|(1<<TXEN) | (1<<RXCIE) | (1<<TXCIE);
 }
 
 void USART_wait_for_empty(void)
@@ -42,6 +43,13 @@ void USART_send(char* text)
 ISR(USART_RXC_vect)
 {
 	znak = UDR;
+//	zad2
+	if(indeks >= (MAXSIZE-1))
+		indeks=0;
+	bufforRead[indeks]=znak;
+	indeks++;
+	if(znak == '\n') rxEnd=1;
+	else rxEnd=0;
 }
 
 ISR(USART_TXC_vect)

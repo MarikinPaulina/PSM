@@ -1,4 +1,4 @@
-19:15:45 **** Incremental Build of configuration Release for project lab2 ****
+18:40:06 **** Incremental Build of configuration Release for project lab2 ****
 make all 
 Building target: lab2.elf
 Invoking: AVR C Linker
@@ -10,8 +10,8 @@ main.c:(.text.__vector_1+0x0): multiple definition of `__vector_1'
 main.c:(.text.startup.main+0x0): multiple definition of `main'
 ./buff.o:buff.c:(.text.startup.main+0x0): first defined here
 collect2: error: ld returned 1 exit status
-makefile:50: polecenia dla obiektu 'lab2.elf' nie powiodły się
 make: *** [lab2.elf] Błąd 1
+makefile:50: polecenia dla obiektu 'lab2.elf' nie powiodły się
 
-19:15:45 Build Finished (took 63ms)
+18:40:06 Build Finished (took 64ms)
 

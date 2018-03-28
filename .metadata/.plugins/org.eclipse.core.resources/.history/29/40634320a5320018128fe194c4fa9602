@@ -1,0 +1,37 @@
+/*
+ * main.c
+ *
+ *  Created on: 28-03-2018
+ *      Author: psm8
+ */
+
+
+#include <avr/io.h>
+#include <avr/interrupt.h>
+
+#include "rs232.h"
+
+
+int main(void)
+{
+	DDRC = 0xFF;
+	sei();
+	USART_send("hello");
+	while(1)
+	{
+		if(znak == "x")
+		{
+			USART_send("ok");
+			znak = 0;
+		}
+		if(rxEnd==1)
+		{
+			if(strncmp((void*)bufforRead,"on",2))
+			{
+
+				rxEnd = 0;
+				indeks = 0;
+			}
+		}
+	}
+}

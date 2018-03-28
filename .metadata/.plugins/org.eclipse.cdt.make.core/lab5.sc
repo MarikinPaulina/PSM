@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?scdStore version="2"?><scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
-<instance id="de.innot.avreclipse.configuration.app.release.547264650;de.innot.avreclipse.configuration.app.release.547264650.;de.innot.avreclipse.tool.compiler.winavr.app.release.1630373071;de.innot.avreclipse.compiler.winavr.input.348109062">
+<instance id="de.innot.avreclipse.configuration.app.release.1261225218;de.innot.avreclipse.configuration.app.release.1261225218.;de.innot.avreclipse.tool.compiler.winavr.app.release.950388869;de.innot.avreclipse.compiler.winavr.input.671394411">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
 <includePath path="/usr/lib/gcc/avr/4.8.1/include"/>
 <includePath path="/usr/lib/gcc/avr/4.8.1/include-fixed"/>
@@ -433,6 +433,8 @@
 <definedSymbol symbol="__UINT24_MAX__=16777215UL"/>
 <definedSymbol symbol="__ELF__=1"/>
 <definedSymbol symbol="F_CPU=1000000UL"/>
+<definedSymbol symbol="F_CPU=11052900UL"/>
+<definedSymbol symbol="__AVR_ATmega32__=1"/>
 </collector>
 </instance>
 </scannerInfo>
