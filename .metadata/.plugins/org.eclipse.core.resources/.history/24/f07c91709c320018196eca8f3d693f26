@@ -1,0 +1,21 @@
+/*
+ * rs232.c
+ *
+ *  Created on: 28-03-2018
+ *      Author: psm8
+ */
+
+#include "rs232.h"
+#include <avr/io.h>
+
+volatile uint_t znak;
+volatile char *bufforSend;
+volatile char bufforRead[MAXSIZE];
+volatile uint8_t rxEnd;
+volatile uint8_t indeks;
+
+void USART_init(uint8_t ubrr)
+{
+	UBRRH = (unsigned char)(ubrr>>8);
+
+}

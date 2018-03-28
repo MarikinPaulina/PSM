@@ -1,0 +1,542 @@
+19:11:02 **** Incremental Build of configuration Release for project lab4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 lab4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     486 bytes (1.5% Full)
+(.text + .data + .bootloader)
+
+Data:         21 bytes (1.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:11:36 **** Incremental Build of configuration Release for project lab0 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 lab0.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     238 bytes (0.7% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:11:36 **** Incremental Build of configuration Release for project lab1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 lab1.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     264 bytes (0.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:11:36 **** Incremental Build of configuration Release for project lab2 ****
+make all 
+Building target: lab2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,lab2.map -mmcu=atmega32 -o "lab2.elf"  ./buff.o ./main.o   
+./main.o: In function `__vector_1':
+main.c:(.text.__vector_1+0x0): multiple definition of `__vector_1'
+./buff.o:buff.c:(.text.__vector_1+0x0): first defined here
+./main.o: In function `main':
+main.c:(.text.startup.main+0x0): multiple definition of `main'
+./buff.o:buff.c:(.text.startup.main+0x0): first defined here
+collect2: error: ld returned 1 exit status
+makefile:50: polecenia dla obiektu 'lab2.elf' nie powiodły się
+make: *** [lab2.elf] Błąd 1
+19:11:36 **** Incremental Build of configuration Release for project lab3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 lab3.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    3582 bytes (10.9% Full)
+(.text + .data + .bootloader)
+
+Data:         30 bytes (1.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:11:37 **** Incremental Build of configuration Release for project lab4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=11059200UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.c"
+In file included from ../main.c:9:0:
+../main.c: In function ‘TIMER0_COMPA_vect’:
+../main.c:55:5: warning: ‘TIMER0_COMPA_vect’ appears to be a misspelled signal handler [enabled by default]
+ ISR(TIMER0_COMPA_vect)
+     ^
+Finished building: ../main.c
+ 
+Building target: lab4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,lab4.map -mmcu=atmega32 -o "lab4.elf"  ./main.o   
+Finished building target: lab4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S lab4.elf  >"lab4.lss"
+Finished building: lab4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab4.elf  "lab4.hex"
+Finished building: lab4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex lab4.elf  "lab4.eep"
+Finished building: lab4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 lab4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     486 bytes (1.5% Full)
+(.text + .data + .bootloader)
+
+Data:         21 bytes (1.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:11:51 **** Incremental Build of configuration Release for project lab0 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 lab0.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     238 bytes (0.7% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:11:51 **** Incremental Build of configuration Release for project lab1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 lab1.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     264 bytes (0.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:11:52 **** Incremental Build of configuration Release for project lab2 ****
+make all 
+Building target: lab2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,lab2.map -mmcu=atmega32 -o "lab2.elf"  ./buff.o ./main.o   
+./main.o: In function `__vector_1':
+main.c:(.text.__vector_1+0x0): multiple definition of `__vector_1'
+./buff.o:buff.c:(.text.__vector_1+0x0): first defined here
+./main.o: In function `main':
+main.c:(.text.startup.main+0x0): multiple definition of `main'
+./buff.o:buff.c:(.text.startup.main+0x0): first defined here
+collect2: error: ld returned 1 exit status
+makefile:50: polecenia dla obiektu 'lab2.elf' nie powiodły się
+make: *** [lab2.elf] Błąd 1
+19:11:52 **** Incremental Build of configuration Release for project lab3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 lab3.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    3582 bytes (10.9% Full)
+(.text + .data + .bootloader)
+
+Data:         30 bytes (1.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:11:52 **** Incremental Build of configuration Release for project lab4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=11059200UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: lab4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,lab4.map -mmcu=atmega32 -o "lab4.elf"  ./main.o   
+Finished building target: lab4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S lab4.elf  >"lab4.lss"
+Finished building: lab4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab4.elf  "lab4.hex"
+Finished building: lab4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex lab4.elf  "lab4.eep"
+Finished building: lab4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 lab4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     486 bytes (1.5% Full)
+(.text + .data + .bootloader)
+
+Data:         21 bytes (1.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:13:13 **** Incremental Build of configuration Release for project lab0 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 lab0.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     238 bytes (0.7% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:13:13 **** Incremental Build of configuration Release for project lab1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 lab1.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     264 bytes (0.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:13:13 **** Incremental Build of configuration Release for project lab2 ****
+make all 
+Building target: lab2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,lab2.map -mmcu=atmega32 -o "lab2.elf"  ./buff.o ./main.o   
+./main.o: In function `__vector_1':
+main.c:(.text.__vector_1+0x0): multiple definition of `__vector_1'
+./buff.o:buff.c:(.text.__vector_1+0x0): first defined here
+./main.o: In function `main':
+main.c:(.text.startup.main+0x0): multiple definition of `main'
+./buff.o:buff.c:(.text.startup.main+0x0): first defined here
+collect2: error: ld returned 1 exit status
+makefile:50: polecenia dla obiektu 'lab2.elf' nie powiodły się
+make: *** [lab2.elf] Błąd 1
+19:13:13 **** Incremental Build of configuration Release for project lab3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 lab3.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    3582 bytes (10.9% Full)
+(.text + .data + .bootloader)
+
+Data:         30 bytes (1.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:13:14 **** Incremental Build of configuration Release for project lab4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=11059200UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: lab4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,lab4.map -mmcu=atmega32 -o "lab4.elf"  ./main.o   
+Finished building target: lab4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S lab4.elf  >"lab4.lss"
+Finished building: lab4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab4.elf  "lab4.hex"
+Finished building: lab4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex lab4.elf  "lab4.eep"
+Finished building: lab4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 lab4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     552 bytes (1.7% Full)
+(.text + .data + .bootloader)
+
+Data:         21 bytes (1.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:13:51 **** Incremental Build of configuration Release for project lab0 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 lab0.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     238 bytes (0.7% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:13:52 **** Incremental Build of configuration Release for project lab1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 lab1.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     264 bytes (0.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:13:52 **** Incremental Build of configuration Release for project lab2 ****
+make all 
+Building target: lab2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,lab2.map -mmcu=atmega32 -o "lab2.elf"  ./buff.o ./main.o   
+./main.o: In function `__vector_1':
+main.c:(.text.__vector_1+0x0): multiple definition of `__vector_1'
+./buff.o:buff.c:(.text.__vector_1+0x0): first defined here
+./main.o: In function `main':
+main.c:(.text.startup.main+0x0): multiple definition of `main'
+./buff.o:buff.c:(.text.startup.main+0x0): first defined here
+makefile:50: polecenia dla obiektu 'lab2.elf' nie powiodły się
+collect2: error: ld returned 1 exit status
+make: *** [lab2.elf] Błąd 1
+19:13:52 **** Incremental Build of configuration Release for project lab3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 lab3.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    3582 bytes (10.9% Full)
+(.text + .data + .bootloader)
+
+Data:         30 bytes (1.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:13:52 **** Incremental Build of configuration Release for project lab4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=11059200UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: lab4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,lab4.map -mmcu=atmega32 -o "lab4.elf"  ./main.o   
+Finished building target: lab4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S lab4.elf  >"lab4.lss"
+Finished building: lab4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab4.elf  "lab4.hex"
+Finished building: lab4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex lab4.elf  "lab4.eep"
+Finished building: lab4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 lab4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     556 bytes (1.7% Full)
+(.text + .data + .bootloader)
+
+Data:         21 bytes (1.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:15:45 **** Incremental Build of configuration Release for project lab0 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 lab0.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     238 bytes (0.7% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:15:45 **** Incremental Build of configuration Release for project lab1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 lab1.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     264 bytes (0.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:15:45 **** Incremental Build of configuration Release for project lab2 ****
+make all 
+Building target: lab2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,lab2.map -mmcu=atmega32 -o "lab2.elf"  ./buff.o ./main.o   
+./main.o: In function `__vector_1':
+main.c:(.text.__vector_1+0x0): multiple definition of `__vector_1'
+./buff.o:buff.c:(.text.__vector_1+0x0): first defined here
+./main.o: In function `main':
+main.c:(.text.startup.main+0x0): multiple definition of `main'
+./buff.o:buff.c:(.text.startup.main+0x0): first defined here
+collect2: error: ld returned 1 exit status
+makefile:50: polecenia dla obiektu 'lab2.elf' nie powiodły się
+make: *** [lab2.elf] Błąd 1
+19:15:45 **** Incremental Build of configuration Release for project lab3 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 lab3.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    3582 bytes (10.9% Full)
+(.text + .data + .bootloader)
+
+Data:         30 bytes (1.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:15:46 **** Incremental Build of configuration Release for project lab4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=11059200UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: lab4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,lab4.map -mmcu=atmega32 -o "lab4.elf"  ./main.o   
+Finished building target: lab4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S lab4.elf  >"lab4.lss"
+Finished building: lab4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab4.elf  "lab4.hex"
+Finished building: lab4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex lab4.elf  "lab4.eep"
+Finished building: lab4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 lab4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     582 bytes (1.8% Full)
+(.text + .data + .bootloader)
+
+Data:         21 bytes (1.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
