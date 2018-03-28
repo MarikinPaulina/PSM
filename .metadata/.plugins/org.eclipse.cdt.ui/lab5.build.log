@@ -1,12 +1,8 @@
-18:40:06 **** Incremental Build of configuration Release for project lab5 ****
+19:15:31 **** Incremental Build of configuration Release for project lab5 ****
 make all 
 Building file: ../main.c
 Invoking: AVR Compiler
 avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=11052900UL -MMD -MP -MF"main.d" -MT"main.d" -c -o "main.o" "../main.c"
-../main.c: In function ‘main’:
-../main.c:30:4: warning: implicit declaration of function ‘strncmp’ [-Wimplicit-function-declaration]
-    if(strncmp((void*)bufforRead,"on",2))
-    ^
 Finished building: ../main.c
  
 Building target: lab5.elf
@@ -32,15 +28,15 @@ AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:     502 bytes (1.5% Full)
+Program:     608 bytes (1.9% Full)
 (.text + .data + .bootloader)
 
-Data:         55 bytes (2.7% Full)
+Data:         61 bytes (3.0% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
 
-18:40:06 Build Finished (took 121ms)
+19:15:32 Build Finished (took 117ms)
 

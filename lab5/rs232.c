@@ -48,8 +48,10 @@ ISR(USART_RXC_vect)
 		indeks=0;
 	bufforRead[indeks]=znak;
 	indeks++;
-	if(znak == '\n') rxEnd=1;
-	else rxEnd=0;
+	if(znak == '\n')
+		rxEnd=1;
+	else
+		rxEnd=0;
 }
 
 ISR(USART_TXC_vect)

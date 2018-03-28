@@ -1,4 +1,4 @@
-18:40:05 **** Incremental Build of configuration Release for project lab0 ****
+19:12:54 **** Incremental Build of configuration Release for project lab0 ****
 make all 
 Invoking: Print Size
 avr-size --format=avr --mcu=atmega32 lab0.elf
@@ -16,5 +16,5 @@ Data:          0 bytes (0.0% Full)
 Finished building: sizedummy
  
 
-18:40:05 Build Finished (took 62ms)
+19:12:54 Build Finished (took 66ms)
 
