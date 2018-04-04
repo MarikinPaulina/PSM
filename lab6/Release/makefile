@@ -30,56 +30,56 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 LSS += \
-lab3.lss \
+lab6.lss \
 
 FLASH_IMAGE += \
-lab3.hex \
+lab6.hex \
 
 EEPROM_IMAGE += \
-lab3.eep \
+lab6.eep \
 
 SIZEDUMMY += \
 sizedummy \
 
 
 # All Target
-all: lab3.elf secondary-outputs
+all: lab6.elf secondary-outputs
 
 # Tool invocations
-lab3.elf: $(OBJS) $(USER_OBJS)
+lab6.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: AVR C Linker'
-	avr-gcc -Wl,-Map,lab3.map -mmcu=atmega32 -o "lab3.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	avr-gcc -Wl,-Map,lab6.map -mmcu=atmega32 -o "lab6.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-lab3.lss: lab3.elf
+lab6.lss: lab6.elf
 	@echo 'Invoking: AVR Create Extended Listing'
-	-avr-objdump -h -S lab3.elf  >"lab3.lss"
+	-avr-objdump -h -S lab6.elf  >"lab6.lss"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-lab3.hex: lab3.elf
+lab6.hex: lab6.elf
 	@echo 'Create Flash image (ihex format)'
-	-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab3.elf  "lab3.hex"
+	-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab6.elf  "lab6.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-lab3.eep: lab3.elf
+lab6.eep: lab6.elf
 	@echo 'Create eeprom image (ihex format)'
-	-avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex lab3.elf  "lab3.eep"
+	-avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex lab6.elf  "lab6.eep"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-sizedummy: lab3.elf
+sizedummy: lab6.elf
 	@echo 'Invoking: Print Size'
-	-avr-size --format=avr --mcu=atmega32 lab3.elf
+	-avr-size --format=avr --mcu=atmega32 lab6.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C_DEPS)$(ASM_DEPS)$(EEPROM_IMAGE)$(FLASH_IMAGE)$(ELFS)$(LSS)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS) lab3.elf
+	-$(RM) $(OBJS)$(C_DEPS)$(ASM_DEPS)$(EEPROM_IMAGE)$(FLASH_IMAGE)$(ELFS)$(LSS)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS) lab6.elf
 	-@echo ' '
 
 secondary-outputs: $(LSS) $(FLASH_IMAGE) $(EEPROM_IMAGE) $(SIZEDUMMY)

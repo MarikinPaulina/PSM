@@ -9,9 +9,7 @@
 #include <avr/interrupt.h>
 #include <stdio.h>
 #include "LCD.h"
-
-
-const char tekst[] PROGMEM = "Hello World!";
+#include "spi.h"
 
 static int uart_putchar(char c, FILE *stream);
 static FILE mystdout = FDEV_SETUP_STREAM(uart_putchar, NULL,_FDEV_SETUP_WRITE);
@@ -22,14 +20,23 @@ lcd_write_data(c);
 return 0;
 }
 
+ISR(TIMER1_COMPA_vect)
+{
+
+}
+
 int main()
 {
 	stdout = &mystdout;
 	lcdinit();
-	lcd_write_text_P(tekst);
-	lcd_write_text_xy(1,7,'P');
+	InitSPI();
+	TCCR1B |= (1<<WGM12) | (1<<CS11) | (1<<CS10);
+	OCR1A = 17280;
+	TIMSK |= (1<<4);
+	sei();
 
-	printf("%.2f %.2f",3.754, 5.24);
+	while(1)
+	{
 
-
+	}
 }
