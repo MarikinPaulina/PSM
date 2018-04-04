@@ -29,7 +29,7 @@ int main()
 	lcd_write_text_P(tekst);
 	lcd_write_text_xy(1,7,'P');
 
-	printf("%.2f %.2f",3.754, 5.24);
+//	printf("%.2f",3.754);
 
 
 }

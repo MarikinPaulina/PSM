@@ -20,6 +20,7 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="232" y="30"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.cdt.make.editor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
@@ -34,21 +35,36 @@
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="LCD.c" partName="LCD.c" path="/home/psm8/workspace/lab6/LCD.c" title="LCD.c" tooltip="lab6/LCD.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/lab6/LCD.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="LCD.h" partName="LCD.h" path="/home/psm8/workspace/lab6/LCD.h" title="LCD.h" tooltip="lab6/LCD.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/lab6/LCD.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="10" selectionOffset="353" selectionTopPixel="0"/>
+</editor>
+<editor focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="/home/psm8/workspace/lab6/main.c" title="main.c" tooltip="lab6/main.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/lab6/main.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="912" selectionTopPixel="297"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="spi.h" partName="spi.h" path="/home/psm8/workspace/lab6/spi.h" title="spi.h" tooltip="lab6/spi.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/lab6/spi.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="451" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="spi.c" partName="spi.c" path="/home/psm8/workspace/lab6/spi.c" title="spi.c" tooltip="lab6/spi.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/lab6/spi.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="469" selectionTopPixel="0"/>
+</editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="/home/psm8/workspace/lab5/main.c" title="main.c" tooltip="lab5/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/lab5/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="162" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="rs232.c" partName="rs232.c" path="/home/psm8/workspace/lab5/rs232.c" title="rs232.c" tooltip="lab5/rs232.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/lab5/rs232.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="791" selectionTopPixel="126"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="rs232.h" partName="rs232.h" path="/home/psm8/workspace/lab5/rs232.h" title="rs232.h" tooltip="lab5/rs232.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/lab5/rs232.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="184" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="392" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -61,6 +77,10 @@
 <view id="org.eclipse.cdt.make.ui.views.MakeView" partName="Make Target"/>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Warnings"/>
+<category IMemento.internal.id="Errors"/>
+</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -207,13 +227,13 @@
 <hide_toolbar_item_id id="org.eclipse.debug.ui.commands.RunToLine"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
-<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
 <view id="org.eclipse.ui.views.TaskList"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.ui.views.PropertySheet"/>
 <view id="de.innot.avreclipse.views.AVRDeviceView"/>
 <view id="de.innot.avreclipse.views.supportedmcus"/>
-<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
 <fastViewBars>
 <fastViewBar fastViewLocation="131072" id="topRight" orientation="512" selectedTabId="org.eclipse.ui.views.ContentOutline" style="0">
 <fastViews>
@@ -246,19 +266,19 @@
 <info part="org.eclipse.ui.editorss" ratio="0.21052632" ratioLeft="260" ratioRight="975" relationship="2" relative="topLeft"/>
 <info folder="true" part="bottom" ratio="0.7488922" ratioLeft="507" ratioRight="170" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
 <page content="de.innot.avreclipse.views.AVRDeviceView" label="AVR Device Explorer"/>
 <page content="de.innot.avreclipse.views.supportedmcus" label="AVR Supported MCUs"/>
-<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="5"/>
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
 <part id="4"/>
+<part id="5"/>
 </presentation>
 </folder>
 </info>
@@ -276,163 +296,168 @@
 <workingSets/>
 <navigationHistory>
 <editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab6/LCD.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab6/LCD.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab6/main.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab6/spi.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab6/spi.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab5/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab5/rs232.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab4/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab4/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab5/rs232.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab5/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab5/rs232.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab3/main.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab6/spi.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab6/spi.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab6/spi.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab6/LCD.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/lab6/LCD.h"/>
 </editors>
-<item historyLabel="rs232.c" index="1">
-<position info="not_deleted" x="791" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="244" y="107"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="245" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="1269" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="1269" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="1269" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="179" y="0"/>
-</item>
-<item historyLabel="rs232.c" index="1">
-<position info="not_deleted" x="791" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="1117" y="151"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="295" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="1028" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="295" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="1256" y="0"/>
-</item>
-<item historyLabel="rs232.c" index="1">
-<position info="not_deleted" x="791" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="295" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="1525" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="409" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="1525" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="409" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="1525" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position/>
-</item>
-<item historyLabel="rs232.c" index="1">
-<position info="not_deleted" x="791" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="805" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="174" y="0"/>
-</item>
-<item historyLabel="rs232.c" index="1">
-<position info="not_deleted" x="791" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="805" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="179" y="0"/>
-</item>
-<item historyLabel="main.c" index="2">
-<position info="not_deleted" x="1281" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position/>
-</item>
-<item historyLabel="rs232.c" index="1">
-<position info="not_deleted" x="791" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position/>
-</item>
-<item historyLabel="rs232.c" index="1">
-<position info="not_deleted" x="791" y="0"/>
-</item>
-<item historyLabel="main.c" index="3">
-<position/>
-</item>
-<item historyLabel="rs232.c" index="1">
-<position info="not_deleted" x="791" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="358" y="0"/>
-</item>
-<item historyLabel="main.c" index="3">
+<item historyLabel="LCD.h" index="1">
 <position info="not_deleted" x="3" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
+<item historyLabel="main.c" index="2">
 <position/>
 </item>
-<item historyLabel="main.c" index="3">
-<position info="not_deleted" x="1172" y="0"/>
+<item historyLabel="main.c" index="6">
+<position info="not_deleted" x="505" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
+<item historyLabel="LCD.h" index="1">
+<position info="not_deleted" x="3" y="0"/>
+</item>
+<item historyLabel="main.c" index="2">
 <position/>
 </item>
-<item historyLabel="main.c" index="3">
-<position info="not_deleted" x="1172" y="0"/>
+<item historyLabel="main.c" index="6">
+<position info="not_deleted" x="505" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="392" y="0"/>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="406" y="0"/>
 </item>
-<item historyLabel="main.c" index="3">
-<position info="not_deleted" x="1172" y="0"/>
+<item historyLabel="spi.c" index="3">
+<position info="not_deleted" x="469" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="162" y="0"/>
+<item historyLabel="spi.h" index="4">
+<position info="not_deleted" x="401" y="7"/>
 </item>
-<item historyLabel="rs232.h" index="4">
-<position info="not_deleted" x="184" y="0"/>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="459" y="0"/>
 </item>
-<item historyLabel="rs232.c" index="1">
-<position info="not_deleted" x="791" y="0"/>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="771" y="0"/>
+</item>
+<item historyLabel="LCD.c" index="0">
+<position info="not_deleted" x="3" y="0"/>
+</item>
+<item historyLabel="LCD.h" index="1">
+<position info="not_deleted" x="353" y="10"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="771" y="0"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="768" y="0"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="479" y="0"/>
+</item>
+<item historyLabel="spi.h" index="4">
+<position info="not_deleted" x="401" y="7"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="496" y="0"/>
+</item>
+<item historyLabel="spi.c" index="3">
+<position info="not_deleted" x="469" y="0"/>
+</item>
+<item historyLabel="spi.h" index="4">
+<position info="not_deleted" x="401" y="7"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="496" y="0"/>
+</item>
+<item historyLabel="spi.h" index="4">
+<position info="not_deleted" x="401" y="7"/>
+</item>
+<item historyLabel="spi.c" index="3">
+<position info="not_deleted" x="469" y="0"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="496" y="0"/>
+</item>
+<item historyLabel="spi.c" index="3">
+<position info="not_deleted" x="469" y="0"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="445" y="0"/>
 </item>
 <item historyLabel="main.c" index="5">
-<position info="not_deleted" x="162" y="0"/>
+<position info="not_deleted" x="392" y="0"/>
 </item>
-<item historyLabel="rs232.c" index="1">
-<position info="not_deleted" x="791" y="0"/>
+<item historyLabel="spi.c" index="3">
+<position info="not_deleted" x="469" y="0"/>
 </item>
-<item active="true" historyLabel="rs232.h" index="6">
-<position info="not_deleted" x="184" y="0"/>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="445" y="0"/>
+</item>
+<item historyLabel="spi.c" index="7">
+<position info="not_deleted" x="469" y="0"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="496" y="0"/>
+</item>
+<item historyLabel="spi.h" index="8">
+<position info="not_deleted" x="273" y="12"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="562" y="0"/>
+</item>
+<item historyLabel="spi.h" index="8">
+<position info="not_deleted" x="273" y="12"/>
+</item>
+<item historyLabel="spi.c" index="9">
+<position info="not_deleted" x="469" y="0"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="562" y="0"/>
+</item>
+<item historyLabel="spi.c" index="9">
+<position info="not_deleted" x="469" y="0"/>
+</item>
+<item historyLabel="spi.h" index="8">
+<position info="not_deleted" x="273" y="12"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="562" y="0"/>
+</item>
+<item historyLabel="spi.h" index="8">
+<position info="not_deleted" x="273" y="12"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="562" y="0"/>
+</item>
+<item historyLabel="LCD.c" index="10">
+<position info="not_deleted" x="3" y="0"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="602" y="0"/>
+</item>
+<item historyLabel="spi.h" index="8">
+<position info="not_deleted" x="451" y="0"/>
+</item>
+<item historyLabel="spi.c" index="9">
+<position info="not_deleted" x="469" y="0"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="1051" y="0"/>
+</item>
+<item historyLabel="LCD.c" index="10">
+<position info="not_deleted" x="3" y="0"/>
+</item>
+<item historyLabel="LCD.h" index="11">
+<position info="not_deleted" x="353" y="10"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="1051" y="0"/>
+</item>
+<item active="true" historyLabel="main.c" index="2">
+<position info="not_deleted" x="1028" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -440,8 +465,12 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="topLeft"/>
+</trimArea>
 <trimArea IMemento.internal.id="131072">
 <trimItem IMemento.internal.id="topRight"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
 </trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
@@ -454,50 +483,50 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="lab4/main.c">
-<persistable path="/lab4/main.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="lab2/main.c">
-<persistable path="/lab2/main.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="LCD.c" tooltip="lab3/LCD.c">
-<persistable path="/lab3/LCD.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="rs232.h" tooltip="lab5/rs232.h">
-<persistable path="/lab5/rs232.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="rs232.c" tooltip="lab5/rs232.c">
-<persistable path="/lab5/rs232.c"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="lab5/main.c">
 <persistable path="/lab5/main.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="LCD.h" tooltip="lab3/LCD.h">
-<persistable path="/lab3/LCD.h"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="lab3/main.c">
 <persistable path="/lab3/main.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="lab1/main.c">
-<persistable path="/lab1/main.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.make.editor" name="makefile" tooltip="lab6/Release/makefile">
+<persistable path="/lab6/Release/makefile"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="longdelay.c" tooltip="lab1/longdelay.c">
-<persistable path="/lab1/longdelay.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="lab4/main.c">
+<persistable path="/lab4/main.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="LCD" tooltip="lab3/LCD">
-<persistable path="/lab3/LCD"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="spi.c" tooltip="lab6/spi.c">
+<persistable path="/lab6/spi.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="buff.c" tooltip="lab2/buff.c">
-<persistable path="/lab2/buff.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="spi.h" tooltip="lab6/spi.h">
+<persistable path="/lab6/spi.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.h" tooltip="lab2/main.h">
-<persistable path="/lab2/main.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="lab6/main.c">
+<persistable path="/lab6/main.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="longdelay.h" tooltip="lab1/longdelay.h">
-<persistable path="/lab1/longdelay.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="LCD.h" tooltip="lab6/LCD.h">
+<persistable path="/lab6/LCD.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="dioda" tooltip="lab1/dioda">
-<persistable path="/lab1/dioda"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="LCD.c" tooltip="lab6/LCD.c">
+<persistable path="/lab6/LCD.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="sdi.c" tooltip="lab7/sdi.c">
+<persistable path="/lab7/sdi.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="sdi.h" tooltip="lab7/sdi.h">
+<persistable path="/lab7/sdi.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="LCD.c" tooltip="lab7/LCD.c">
+<persistable path="/lab7/LCD.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="LCD.h" tooltip="lab7/LCD.h">
+<persistable path="/lab7/LCD.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="lab7/main.c">
+<persistable path="/lab7/main.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="rs232.h" tooltip="lab5/rs232.h">
+<persistable path="/lab5/rs232.h"/>
 </file>
 </mruList>
 </workbench>
