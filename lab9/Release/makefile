@@ -30,56 +30,56 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 LSS += \
-lab9a.lss \
+lab9.lss \
 
 FLASH_IMAGE += \
-lab9a.hex \
+lab9.hex \
 
 EEPROM_IMAGE += \
-lab9a.eep \
+lab9.eep \
 
 SIZEDUMMY += \
 sizedummy \
 
 
 # All Target
-all: lab9a.elf secondary-outputs
+all: lab9.elf secondary-outputs
 
 # Tool invocations
-lab9a.elf: $(OBJS) $(USER_OBJS)
+lab9.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: AVR C Linker'
-	avr-gcc -Wl,-Map,lab9a.map -Wl,-u,vfprintf -lprintf_flt -lm -mmcu=atmega32 -o "lab9a.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	avr-gcc -Wl,-Map,lab9.map -Wl,-u,vfprintf -lprintf_flt -lm -mmcu=atmega16 -o "lab9.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-lab9a.lss: lab9a.elf
+lab9.lss: lab9.elf
 	@echo 'Invoking: AVR Create Extended Listing'
-	-avr-objdump -h -S lab9a.elf  >"lab9a.lss"
+	-avr-objdump -h -S lab9.elf  >"lab9.lss"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-lab9a.hex: lab9a.elf
+lab9.hex: lab9.elf
 	@echo 'Create Flash image (ihex format)'
-	-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab9a.elf  "lab9a.hex"
+	-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex lab9.elf  "lab9.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-lab9a.eep: lab9a.elf
+lab9.eep: lab9.elf
 	@echo 'Create eeprom image (ihex format)'
-	-avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex lab9a.elf  "lab9a.eep"
+	-avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex lab9.elf  "lab9.eep"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-sizedummy: lab9a.elf
+sizedummy: lab9.elf
 	@echo 'Invoking: Print Size'
-	-avr-size --format=avr --mcu=atmega32 lab9a.elf
+	-avr-size --format=avr --mcu=atmega16 lab9.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C_DEPS)$(ASM_DEPS)$(EEPROM_IMAGE)$(FLASH_IMAGE)$(ELFS)$(LSS)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS) lab9a.elf
+	-$(RM) $(OBJS)$(C_DEPS)$(ASM_DEPS)$(EEPROM_IMAGE)$(FLASH_IMAGE)$(ELFS)$(LSS)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS) lab9.elf
 	-@echo ' '
 
 secondary-outputs: $(LSS) $(FLASH_IMAGE) $(EEPROM_IMAGE) $(SIZEDUMMY)

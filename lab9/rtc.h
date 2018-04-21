@@ -33,8 +33,8 @@
 #define DS1307_RAM_B 8
 #define DS1307_RAM_E 0x3f
 
-#define dec2bcd(x) ((( (x)/10)<<4) + ((x) % 10))
-#define bcd2dec(x) ((( (x)<<4)*10) + ((x) & 15))
+#define dec2bcd(x) ( ( ((x) / 10) << 4)  + ( (x) % 10) )
+#define bcd2dec(x) ( ( ((x) >> 4)*10) + ((x) & 0x0f) )
 
 void rtc_init(void);
 void rtc_control_reg(uint8_t out, uint8_t sqwe, uint8_t rs1, uint8_t rs0);

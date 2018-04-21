@@ -45,23 +45,11 @@ ISR(INT0_vect){
 }
 
 int main (void){
-
-
-
-
-
-//	lcd_init();
-
-
 	lcdinit();
-
 	stdout = &mystdout;
 	I2C_init();
-
 	MCUCR |= (1<<ISC01);
 	GICR |= (1<<INT0);
-
-	//rtc_init();
 
 	rtc_control_reg(0,1,0,0);
 

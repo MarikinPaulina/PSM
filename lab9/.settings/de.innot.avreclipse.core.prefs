@@ -1,9 +1,3 @@
-avrtarget/ClockFrequency=11059200
-avrtarget/ExtRAMSize=0
-avrtarget/ExtendedRAM=false
-avrtarget/MCUType=atmega32
-avrtarget/UseEEPROM=false
-avrtarget/UseExtendedRAMforHeap=true
 avrtarget/avrdude/BitBangDelay=
 avrtarget/avrdude/Bitclock=
 avrtarget/avrdude/EEPROMFile=
