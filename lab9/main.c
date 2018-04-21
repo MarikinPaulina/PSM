@@ -53,8 +53,8 @@ int main (void){
 
 	rtc_control_reg(0,1,0,0);
 
-	rtc_set_time(12,16,1,0,0);
-	rtc_set_date(1,25,64,18);
+	rtc_set_time(0,0,0,0,0);
+	rtc_set_date(0,0,0,0);
 
 	sei();
 

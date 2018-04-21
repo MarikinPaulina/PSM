@@ -49,7 +49,7 @@ all: lab9.elf secondary-outputs
 lab9.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: AVR C Linker'
-	avr-gcc -Wl,-Map,lab9.map -Wl,-u,vfprintf -lprintf_flt -lm -mmcu=atmega16 -o "lab9.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	avr-gcc -Wl,-Map,lab9.map -Wl,-u,vfprintf -lprintf_flt -lm -mmcu=atmega32 -o "lab9.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -73,7 +73,7 @@ lab9.eep: lab9.elf
 
 sizedummy: lab9.elf
 	@echo 'Invoking: Print Size'
-	-avr-size --format=avr --mcu=atmega16 lab9.elf
+	-avr-size --format=avr --mcu=atmega32 lab9.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 
