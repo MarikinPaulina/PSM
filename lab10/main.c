@@ -17,6 +17,7 @@
 #include "OW.h"
 #include "termo.h"
 
+volatile uint16_t liczba = 20;
 static int uart_putchar(char c, FILE *stream);
 static FILE mystdout = FDEV_SETUP_STREAM(uart_putchar, NULL,_FDEV_SETUP_WRITE);
 
@@ -36,6 +37,7 @@ int main(void)
 //	Sterowanie z rs232
 	USART_init(5);
 	sei();
+	USART_send("hello\n");
 //
 
 //	Włączenie LCD
@@ -55,6 +57,22 @@ int main(void)
 		printf("T = %5.1f\337C", ((double)temperature)*0.0625);
 		lcd_set_xy(1,0);
 		printf("T =%4d.%04d\337C", temperature>>4, (temperature & 0x0f) * 625);
+
+		if(rxEnd==1)
+		{
+			if(strncmp((void*)bufforRead,"temp",4)==0)
+			{
+				char buffor[MAXSIZE];
+//				itoa(temperature*0.0625,buffor,10);
+				dtostrf((double)temperature*0.0625,5,4,buffor);
+				USART_send(buffor);
+				USART_send("\n");
+//				USART_send("hi\n");
+			}
+			rxEnd = 0;
+			indeks = 0;
+			memset((void*)bufforRead,0,MAXSIZE);
+		}
 	}
 
 }

@@ -31,6 +31,7 @@ int voltage_to_temp(double v)
 	return temp;
 }
 
+//sei
 ISR(TIMER1_COMPA_vect)
 {
 	SS_ENABLE();
