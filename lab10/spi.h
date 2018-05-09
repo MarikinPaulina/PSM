@@ -12,11 +12,10 @@
 #include <avr/io.h>
 #include <stdio.h>
 
-#define MOSI PB5 //5 lub 6
+#define MOSI PB5
 #define SCK PB7 //zegar do 7
 #define SS PB4 //napiecie do 8
-#define MISO PB6 //5 lub 6
-// kanał 0 ma pin 2, tam trzeba podłączyć źródło
+#define MISO PB6
 
 //powyższe są zdefiniowane w nocie katalogowej atmega 32 np.miso jako pb6
 
