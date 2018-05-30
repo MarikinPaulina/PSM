@@ -34,11 +34,6 @@ lcd_write_data(c);
 return 0;
 }
 
-uint8_t rand(uint8_t seed)
-{
-	uint8_t r = 1 + 14*(seed/59);
-	return r;
-}
 
 ISR(INT0_vect){
 	rtc_get_time(&h, &m, &s);
@@ -46,6 +41,7 @@ ISR(INT0_vect){
 }
 
 int main (void){
+	alarm_h = 1;
 //	Bzyczek
 	DDRD |= (1<<0);
 	PORTD |= (1<<0);
@@ -55,10 +51,8 @@ int main (void){
 	PORTB |= ( (1<<0) | (1<<1) | (1<<2) | (1<<3) );
 
 //	Diody
-	DDRD |= (1<<7) | (1<<6);
-	DDRC |= (1<<2) | (1<<3);
-	PORTD |= (1<<7) | (1<<6);
-	PORTC |= (1<<2) | (1<<3);
+	DDRC |= (1<<2) | (1<<3) | (1<<4) | (1<<5);
+	PORTC |= (1<<2) | (1<<3) | (1<<4) | (1<<5);
 
 	lcdinit();
 	stdout = &mystdout;
@@ -68,8 +62,8 @@ int main (void){
 
 	rtc_control_reg(0,1,0,0);
 
-	rtc_set_time(0,37,19,0,0);
-//	rtc_set_date(3,30,5,18);
+	rtc_set_time(0,0,20,0,0);
+	rtc_set_date(3,30,5,18);
 
 	sei();
 
@@ -77,29 +71,39 @@ int main (void){
 	uint8_t set = 0;
 	uint8_t uklad;
 
+//	srand(s);
+//	uklad = rand() % 16;
+//	PORTC &= ~((uklad & (0x0f))<<2);
+//	printf("%02d",uklad);
 	while(1){
-		if(alarm)
+	if(alarm)
 		{
 			PORTD &= ~(1<<0);
 			if(poziom == 0)
 			{
-				while((PINB&0x0f)!=15){}
+				while((PINB&0x0f)==15){}
+				alarm = 0;
 				PORTD |= (1<<0);
 			}
 			else
 			{
 				while(poziom)
 				{
-					uklad = rand(s);
+					srand(s);
+					uklad = rand() % 16;
+					PORTC &= ((uklad & (0x0f))<<2);
+					printf("%02d",uklad);
 					while((PINB&0x0f)!=uklad){}
 					poziom--;
 				}
+				PORTC |= (1<<2) | (1<<3) | (1<<4) | (1<<5);
+				alarm = 0;
 				PORTD |= (1<<0);
 			}
 		}
 		else
 		{
-			if((h==alarm_h) & (m==alarm_m))
+			if((h==alarm_h) & (m==alarm_m) & (set==0))
 			{
 				alarm = 1;
 				poziom = level;
@@ -116,6 +120,7 @@ int main (void){
 			}
 			if(set == 1)
 			{
+				lcd_clear();
 				print_date(date,month,year,h,m,s);
 				_delay_ms(500);
 				print_date_day(date,month,year,h,m,s);
@@ -270,6 +275,7 @@ int main (void){
 			{
 				lcd_clear();
 				print_level(level);
+				_delay_ms(500);
 				_delay_ms(500);
 				if(!(PINB&(1<<1)))
 				{
