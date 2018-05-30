@@ -34,6 +34,12 @@ lcd_write_data(c);
 return 0;
 }
 
+uint8_t rand(uint8_t seed)
+{
+	uint8_t r = 1 + 14*(seed/59);
+	return r;
+}
+
 ISR(INT0_vect){
 	rtc_get_time(&h, &m, &s);
 	rtc_get_date(&day, &date, &month, &year);
@@ -69,14 +75,35 @@ int main (void){
 
 	uint8_t alarm = 0;
 	uint8_t set = 0;
+	uint8_t uklad;
 
 	while(1){
 		if(alarm)
 		{
-
+			PORTD &= ~(1<<0);
+			if(poziom == 0)
+			{
+				while((PINB&0x0f)!=15){}
+				PORTD |= (1<<0);
+			}
+			else
+			{
+				while(poziom)
+				{
+					uklad = rand(s);
+					while((PINB&0x0f)!=uklad){}
+					poziom--;
+				}
+				PORTD |= (1<<0);
+			}
 		}
 		else
 		{
+			if((h==alarm_h) & (m==alarm_m))
+			{
+				alarm = 1;
+				poziom = level;
+			}
 			if(!(PINB&(1<<0)))
 			{
 				set++;
@@ -98,14 +125,14 @@ int main (void){
 					date--;
 					if(date == 0)
 						date = 31;
-					tc_set_date(day,date,month,year);
+					rtc_set_date(day,date,month,year);
 				}
 				if(!(PINB&(1<<2)))
 				{
 					date++;
 					if(date == 32)
 						date = 1;
-					tc_set_date(day,date,month,year);
+					rtc_set_date(day,date,month,year);
 				}
 
 			}
@@ -120,14 +147,14 @@ int main (void){
 					month--;
 					if(month == 0)
 						month = 12;
-					tc_set_date(day,date,month,year);
+					rtc_set_date(day,date,month,year);
 				}
 				if(!(PINB&(1<<2)))
 				{
 					month++;
 					if(month == 13)
 						month = 1;
-					tc_set_date(day,date,month,year);
+					rtc_set_date(day,date,month,year);
 				}
 
 			}
@@ -142,14 +169,14 @@ int main (void){
 					year--;
 					if(year == 255)
 						year = 99;
-					tc_set_date(day,date,month,year);
+					rtc_set_date(day,date,month,year);
 				}
 				if(!(PINB&(1<<2)))
 				{
 					year++;
 					if(year == 100)
 						year = 0;
-					tc_set_date(day,date,month,year);
+					rtc_set_date(day,date,month,year);
 				}
 
 			}
@@ -199,23 +226,62 @@ int main (void){
 			}
 			if(set == 6)
 			{
-				print_date(date,month,year,h,m,s);
+				lcd_clear();
+				print_alarm(alarm_h, alarm_m);
 				_delay_ms(500);
-				print_date_m(date,month,year,h,m,s);
+				print_alarm_h(alarm_h, alarm_m);
 				_delay_ms(500);
 				if(!(PINB&(1<<1)))
 				{
-					m--;
-					if(m == 255)
-						m = 59;
-					rtc_set_time(s,m,h,0,0);
+					alarm_h--;
+					if(alarm_h == 255)
+						alarm_h = 23;
 				}
 				if(!(PINB&(1<<2)))
 				{
-					m++;
-					if(m == 60)
-						m = 0;
-					rtc_set_time(s,m,h,0,0);
+					alarm_h++;
+					if(alarm_h == 25)
+						alarm_h = 0;
+				}
+
+			}
+			if(set == 7)
+			{
+				lcd_clear();
+				print_alarm(alarm_h, alarm_m);
+				_delay_ms(500);
+				print_alarm_m(alarm_h, alarm_m);
+				_delay_ms(500);
+				if(!(PINB&(1<<1)))
+				{
+					alarm_m--;
+					if(alarm_m == 255)
+						alarm_m = 59;
+				}
+				if(!(PINB&(1<<2)))
+				{
+					alarm_m++;
+					if(alarm_m == 60)
+						alarm_m = 0;
+				}
+
+			}
+			if(set == 8)
+			{
+				lcd_clear();
+				print_level(level);
+				_delay_ms(500);
+				if(!(PINB&(1<<1)))
+				{
+					level--;
+					if(level == 255)
+						level = 5;
+				}
+				if(!(PINB&(1<<2)))
+				{
+					level++;
+					if(level == 6)
+						level = 0;
 				}
 
 			}
