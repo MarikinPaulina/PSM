@@ -5,6 +5,8 @@
  *      Author: psm8
  */
 
+#include "LCD.h"
+#include "LCD_timedate.h"
 
 void print_date(uint8_t date, uint8_t month, uint8_t year, uint8_t h, uint8_t m, uint8_t s)
 {

@@ -5,6 +5,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../LCD.c \
+../LCD_timedate.c \
 ../i2c.c \
 ../longdelay.c \
 ../main.c \
@@ -14,6 +15,7 @@ C_SRCS += \
 
 OBJS += \
 ./LCD.o \
+./LCD_timedate.o \
 ./i2c.o \
 ./longdelay.o \
 ./main.o \
@@ -23,6 +25,7 @@ OBJS += \
 
 C_DEPS += \
 ./LCD.d \
+./LCD_timedate.d \
 ./i2c.d \
 ./longdelay.d \
 ./main.d \

@@ -18,10 +18,13 @@
 #include "i2c.h"
 #include "rtc.h"
 #include "LCD.h"
+#include "LCD_timedate.h"
 
 
 char* week_days[7] = {"Pon","Wt", "Sr", "Czw", "Pi", "Sob", "Nd" };
 volatile uint8_t h,m,s,day,date,month,year;
+volatile uint8_t alarm_h,alarm_m;
+volatile uint8_t level,poziom;
 
 static int uart_putchar(char c, FILE *stream);
 static FILE mystdout = FDEV_SETUP_STREAM(uart_putchar, NULL,_FDEV_SETUP_WRITE);
@@ -37,6 +40,20 @@ ISR(INT0_vect){
 }
 
 int main (void){
+//	Bzyczek
+	DDRD |= (1<<0);
+	PORTD |= (1<<0);
+
+//	Przyciski
+	DDRB &= ~( (1<<0) | (1<<1) | (1<<2) | (1<<3) );
+	PORTB |= ( (1<<0) | (1<<1) | (1<<2) | (1<<3) );
+
+//	Diody
+	DDRD |= (1<<7) | (1<<6);
+	DDRC |= (1<<2) | (1<<3);
+	PORTD |= (1<<7) | (1<<6);
+	PORTC |= (1<<2) | (1<<3);
+
 	lcdinit();
 	stdout = &mystdout;
 	I2C_init();
@@ -45,11 +62,54 @@ int main (void){
 
 	rtc_control_reg(0,1,0,0);
 
-	rtc_set_time(0,0,0,0,0);
-	rtc_set_date(0,0,0,0);
+	rtc_set_time(0,37,19,0,0);
+//	rtc_set_date(3,30,5,18);
 
 	sei();
 
-	while(1){ }
+	uint8_t alarm = 0;
+	uint8_t set = 0;
+
+	while(1){
+		if(alarm)
+		{
+
+		}
+		else
+		{
+			if(!(PINB&(1<<0)))
+			{
+				set++;
+				if(set == 9)
+					set = 0;
+			}
+			if(set == 0)
+			{
+				print_date(date,month,year,h,m,s);
+			}
+			if(set == 1)
+			{
+				print_date(date,month,year,h,m,s);
+				_delay_ms(500);
+				print_date_day(date,month,year,h,m,s);
+				_delay_ms(500);
+				if(!(PINB&(1<<1)))
+				{
+					date--;
+					if(date == 0)
+						date = 31;
+					tc_set_date(day,date,month,year);
+				}
+				if(!(PINB&(1<<2)))
+				{
+					date++;
+					if(date == 32)
+						date = 1;
+					tc_set_date(day,date,month,year);
+				}
+
+			}
+		}
+	}
 	return 0;
 }

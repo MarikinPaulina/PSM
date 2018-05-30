@@ -1,5 +1,5 @@
 main.d: ../main.c ../longdelay.h ../rs232.h ../spi.h ../i2c.h ../rtc.h \
- ../LCD.h
+ ../LCD.h ../LCD_timedate.h
 
 ../longdelay.h:
 
@@ -12,3 +12,5 @@ main.d: ../main.c ../longdelay.h ../rs232.h ../spi.h ../i2c.h ../rtc.h \
 ../rtc.h:
 
 ../LCD.h:
+
+../LCD_timedate.h:
