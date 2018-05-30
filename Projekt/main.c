@@ -109,6 +109,117 @@ int main (void){
 				}
 
 			}
+			if(set == 2)
+			{
+				print_date(date,month,year,h,m,s);
+				_delay_ms(500);
+				print_date_month(date,month,year,h,m,s);
+				_delay_ms(500);
+				if(!(PINB&(1<<1)))
+				{
+					month--;
+					if(month == 0)
+						month = 12;
+					tc_set_date(day,date,month,year);
+				}
+				if(!(PINB&(1<<2)))
+				{
+					month++;
+					if(month == 13)
+						month = 1;
+					tc_set_date(day,date,month,year);
+				}
+
+			}
+			if(set == 3)
+			{
+				print_date(date,month,year,h,m,s);
+				_delay_ms(500);
+				print_date_year(date,month,year,h,m,s);
+				_delay_ms(500);
+				if(!(PINB&(1<<1)))
+				{
+					year--;
+					if(year == 255)
+						year = 99;
+					tc_set_date(day,date,month,year);
+				}
+				if(!(PINB&(1<<2)))
+				{
+					year++;
+					if(year == 100)
+						year = 0;
+					tc_set_date(day,date,month,year);
+				}
+
+			}
+			if(set == 4)
+			{
+				print_date(date,month,year,h,m,s);
+				_delay_ms(500);
+				print_date_h(date,month,year,h,m,s);
+				_delay_ms(500);
+				if(!(PINB&(1<<1)))
+				{
+					h--;
+					if(h == 255)
+						h = 23;
+					rtc_set_time(s,m,h,0,0);
+				}
+				if(!(PINB&(1<<2)))
+				{
+					h++;
+					if(h == 25)
+						h = 0;
+					rtc_set_time(s,m,h,0,0);
+				}
+
+			}
+			if(set == 5)
+			{
+				print_date(date,month,year,h,m,s);
+				_delay_ms(500);
+				print_date_m(date,month,year,h,m,s);
+				_delay_ms(500);
+				if(!(PINB&(1<<1)))
+				{
+					m--;
+					if(m == 255)
+						m = 59;
+					rtc_set_time(s,m,h,0,0);
+				}
+				if(!(PINB&(1<<2)))
+				{
+					m++;
+					if(m == 60)
+						m = 0;
+					rtc_set_time(s,m,h,0,0);
+				}
+
+			}
+			if(set == 6)
+			{
+				print_date(date,month,year,h,m,s);
+				_delay_ms(500);
+				print_date_m(date,month,year,h,m,s);
+				_delay_ms(500);
+				if(!(PINB&(1<<1)))
+				{
+					m--;
+					if(m == 255)
+						m = 59;
+					rtc_set_time(s,m,h,0,0);
+				}
+				if(!(PINB&(1<<2)))
+				{
+					m++;
+					if(m == 60)
+						m = 0;
+					rtc_set_time(s,m,h,0,0);
+				}
+
+			}
+
 		}
 	}
 	return 0;
