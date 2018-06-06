@@ -62,15 +62,17 @@ int main (void){
 
 	rtc_control_reg(0,1,0,0);
 
-	rtc_set_time(0,0,20,0,0);
-	rtc_set_date(3,30,5,18);
+	rtc_set_time(0,0,0,0,0);
+	rtc_set_date(3,6,6,18);
 
 	sei();
 
 	uint8_t alarm = 0;
 	uint8_t set = 0;
 	uint8_t uklad;
+	uint8_t done = 0;
 
+	_delay_ms(500);
 //	srand(s);
 //	uklad = rand() % 16;
 //	PORTC &= ~((uklad & (0x0f))<<2);
@@ -82,28 +84,39 @@ int main (void){
 			if(poziom == 0)
 			{
 				while((PINB&0x0f)==15){}
-				alarm = 0;
-				PORTD |= (1<<0);
 			}
 			else
 			{
 				while(poziom)
 				{
 					srand(s);
-					uklad = rand() % 16;
+					uklad = 1 + (rand() % 15);
 					PORTC &= ((uklad & (0x0f))<<2);
 					printf("%02d",uklad);
 					while((PINB&0x0f)!=uklad){}
+					for(int i = 0;i<poziom;i++)
+					{
+						_delay_ms(250);
+						PORTD |= (1<<0);
+						_delay_ms(250);
+						PORTD &= ~(1<<0);
+					}
 					poziom--;
 				}
-				PORTC |= (1<<2) | (1<<3) | (1<<4) | (1<<5);
-				alarm = 0;
-				PORTD |= (1<<0);
+				PORTC |= (0x0f<<2); //(1<<2) | (1<<3) | (1<<4) | (1<<5);
 			}
+			alarm = 0;
+			done = 1;
+			PORTD |= (1<<0);
+			_delay_ms(500);
 		}
 		else
 		{
-			if((h==alarm_h) & (m==alarm_m) & (set==0))
+			if((h==alarm_h) & (m==alarm_m + 1) & done)
+				done = 0;
+			if((h==alarm_h + 1) & (60==alarm_m + 1) & (m==0) & done)
+				done = 0;
+			if((h==alarm_h) & (m==alarm_m) & !set & !done)
 			{
 				alarm = 1;
 				poziom = level;
@@ -116,7 +129,9 @@ int main (void){
 			}
 			if(set == 0)
 			{
+				lcd_clear();
 				print_date(date,month,year,h,m,s);
+				_delay_ms(500);
 			}
 			if(set == 1)
 			{
@@ -241,12 +256,14 @@ int main (void){
 					alarm_h--;
 					if(alarm_h == 255)
 						alarm_h = 23;
+					done = 0;
 				}
 				if(!(PINB&(1<<2)))
 				{
 					alarm_h++;
 					if(alarm_h == 25)
 						alarm_h = 0;
+					done = 0;
 				}
 
 			}
@@ -262,12 +279,14 @@ int main (void){
 					alarm_m--;
 					if(alarm_m == 255)
 						alarm_m = 59;
+					done = 0;
 				}
 				if(!(PINB&(1<<2)))
 				{
 					alarm_m++;
 					if(alarm_m == 60)
 						alarm_m = 0;
+					done = 0;
 				}
 
 			}
@@ -275,7 +294,6 @@ int main (void){
 			{
 				lcd_clear();
 				print_level(level);
-				_delay_ms(500);
 				_delay_ms(500);
 				if(!(PINB&(1<<1)))
 				{
